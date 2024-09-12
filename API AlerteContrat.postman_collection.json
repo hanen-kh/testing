@@ -1,0 +1,947 @@
+{
+	"info": {
+		"_postman_id": "d57f9a46-f73e-4478-9218-de42b5b6b512",
+		"name": "API AlerteContrat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34122407"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "all users",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/server/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"users"
+							],
+							"query": [
+								{
+									"key": "Content-Type",
+									"value": "appllication/json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserByName",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/server/users/Chaima",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"users",
+								"Chaima"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/verify?token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWRrc2liaUBnbWFpbC5jb20iLCJpYXQiOjE3MjE2Mzk4MDEsImV4cCI6MTcyMTY0MzQwMX0.B6AnRRtMh5GO_iJanBl-HoIjGxzxMFuGXC4pNQNTVIQ",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"verify"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWRrc2liaUBnbWFpbC5jb20iLCJpYXQiOjE3MjE2Mzk4MDEsImV4cCI6MTcyMTY0MzQwMX0.B6AnRRtMh5GO_iJanBl-HoIjGxzxMFuGXC4pNQNTVIQ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Fatma\",\r\n    \"password\": \"fatma1234\",\r\n    \"email\": \"fatmamensi91@gmail.com\",\r\n    \"role\": \"UTILISATEUR\",\r\n    \"roles\": [\"UTILISATEUR\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/server/users/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdminLogin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \"username\": \"Mohamed\",\r\n    \"password\": \"mohamed%?§468\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/server/users/adminLogin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"users",
+								"adminLogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserLogin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Karim\",\r\n    \"password\": \"Karim%?g658\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/server/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNb2hhbWVkIiwiaWF0IjoxNzIzMTA4MDY1LCJleHAiOjE3MjMxMDg5NjV9.fXL4M_Mr_Z-ifK459yiDq1E7bMe59gqtdHTGAH6eIjw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/server/users/28",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"users",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": " application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNb2hhbWVkIiwiaWF0IjoxNzIzMTEyNTEzLCJleHAiOjE3MjMxMTM0MTN9.edbuUgjA0o5birahTiWYXYQAIEO5CqLvcDT-d_vWu9E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username ",
+									"value": "Chaima ",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "chaima.mensi011@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "chaima123.%gw",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/server/users/update/27",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"users",
+								"update",
+								"27"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Suppliers",
+			"item": [
+				{
+					"name": "addEntreprise",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Innovative Logistics\",\r\n  \"email\": \"info@innovativelogistics.com\",\r\n  \"phone\": \"3216549870\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/server/entreprises/addEntreprise",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"entreprises",
+								"addEntreprise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Entreprises",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/server/entreprises",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"entreprises"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EntreprisesByName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/server/entreprises/Tech Innovators Incs",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"entreprises",
+								"Tech Innovators Incs"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteEntreprise",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNb2hhbWVkIiwiaWF0IjoxNzIxNzI3MjUyLCJleHAiOjE3MjE3MjgxNTJ9.QAX3YTMKWJsI-FTfJBPzX0hxnIM6R1XXabAo3rhHSPI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/server/entreprises/5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"entreprises",
+								"5"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contract",
+			"item": [
+				{
+					"name": "getAllContracts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/contracts/getAllContracts",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"contracts",
+								"getAllContracts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getContractById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/contracts/getContract/13",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"contracts",
+								"getContract",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getContractByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/contracts/getContractByName/Contrat de Service",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"contracts",
+								"getContractByName",
+								"Contrat de Service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Contract",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 59,\r\n    \"entrepriseName\": \"Tech Innovators Inc\",\r\n    \"dateDebut\": \"2024-09-01\",\r\n    \"dateFin\": \"2024-10-31\",\r\n    \"title\": \"Contrat de Service Tech Innovators \",\r\n    \"description\": \"Contrat pour les services fournis par Tech Innovators Inc\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/contracts/createContract?Content-Type=application/json",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"contracts",
+								"createContract"
+							],
+							"query": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Contract",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/contracts/deleteContract/7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"contracts",
+								"deleteContract",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Contract",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dateDebut\": \"2024-09-01\",\r\n  \"dateFin\": \"2025-03-31\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/contracts/updateContract/10  ",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"contracts",
+								"updateContract",
+								"10  "
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Requests need auth",
+			"item": [
+				{
+					"name": "Delete User Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNb2hhbWVkIiwiaWF0IjoxNzIzMTA4MDY1LCJleHAiOjE3MjMxMDg5NjV9.fXL4M_Mr_Z-ifK459yiDq1E7bMe59gqtdHTGAH6eIjw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/server/users/28",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"users",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserLogin Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Karim\",\r\n    \"password\": \"Karim%?g658\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/server/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": " application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNb2hhbWVkIiwiaWF0IjoxNzIzMTEyNTEzLCJleHAiOjE3MjMxMTM0MTN9.edbuUgjA0o5birahTiWYXYQAIEO5CqLvcDT-d_vWu9E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username ",
+									"value": "Chaima ",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "chaima.mensi011@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "chaima123.%gw",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/server/users/update/27",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"users",
+								"update",
+								"27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteEntreprise Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNb2hhbWVkIiwiaWF0IjoxNzIxNzI3MjUyLCJleHAiOjE3MjE3MjgxNTJ9.QAX3YTMKWJsI-FTfJBPzX0hxnIM6R1XXabAo3rhHSPI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/server/entreprises/5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"entreprises",
+								"5"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdminLogin Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \"username\": \"Mohamed\",\r\n    \"password\": \"mohamed%?§468\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/server/users/adminLogin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"server",
+								"users",
+								"adminLogin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNb2hhbWVkIiwiaWF0IjoxNzIzODA0Mzg0LCJleHAiOjE3MjM4MDUyODR9.-4wXMRRN-73V_COq096bP4vdTB8acj7O2r340ELHPeQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Document",
+			"item": [
+				{
+					"name": "Upload document",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/chaim/OneDrive/Desktop/work space/AlerteContacts/src/main/java/FILE_STORAGE/mail professionnel.pdf"
+								},
+								{
+									"key": "title ",
+									"value": "document4",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "document lié au contrat",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "pdf",
+									"type": "text"
+								},
+								{
+									"key": "contractId",
+									"value": "14",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/api/documents/upload",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All document",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/documents",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"documents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get documet by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/documents/download/13",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"documents",
+								"download",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "http://localhost:8000/api/contracts/testNotifyUsersOfEndingContracts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/contracts/testNotifyUsersOfEndingContracts",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"contracts",
+								"testNotifyUsersOfEndingContracts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
