@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.security.access.AccessDeniedException;
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:4200")
+
 @RequestMapping("/server/entreprises")
 public class EntrepriseController {
 

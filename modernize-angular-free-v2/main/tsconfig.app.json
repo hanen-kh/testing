@@ -6,7 +6,7 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts" // Ajoutez ceci si vous utilisez polyfills
+    "src/polyfills.ts" 
   ],
   "include": [
     "src/**/*.ts",

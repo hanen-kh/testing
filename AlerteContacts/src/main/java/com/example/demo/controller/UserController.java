@@ -16,6 +16,7 @@ import org.springframework.security.core.AuthenticationException;
 import java.util.List;
 import com.example.demo.entity.LoginResponse;
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/server/users")
 public class UserController {
 

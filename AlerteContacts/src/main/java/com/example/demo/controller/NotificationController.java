@@ -6,8 +6,10 @@ import org.springframework.stereotype.Controller;
 
 import com.example.demo.service.NotificationService;
 import com.example.demo.entity.NotificationRequest;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:4200")
 public class NotificationController {
 
     @Autowired
